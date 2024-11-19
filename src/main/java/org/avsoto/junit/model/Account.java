@@ -17,4 +17,26 @@ public class Account {
     private String lastName;
     private BigDecimal balance;
 
+    @Override
+    public boolean equals(Object obj) {
+        Account a = (Account) obj;
+
+        if(obj == null){
+            return false;
+        }
+
+        if(this.firstName == null || this.lastName == null || this.balance == null){
+            return false;
+        }
+
+        return this.firstName.equals(a.getFirstName()) && this.lastName.equals(a.getLastName()) && this.balance.equals(a.getBalance());
+    }
+
+    public void debit(BigDecimal amount){
+
+    }
+
+    public void credit(BigDecimal amount){
+
+    }
 }
