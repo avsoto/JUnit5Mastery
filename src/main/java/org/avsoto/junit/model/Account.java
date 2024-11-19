@@ -4,10 +4,11 @@ import java.math.BigDecimal;
 import java.util.UUID;
 import lombok.*;
 
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Account {
 
     private Integer id;
