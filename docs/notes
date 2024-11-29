@@ -1,0 +1,38 @@
+¿Qué es un stream?
+Un Stream en Java es una abstracción que representa una secuencia de elementos que se pueden procesar uno a uno. Se utiliza para realizar operaciones como filtrado, mapeo, reducción, agrupación y más, con un enfoque funcional.
+
+AssertAll: Permite agrupar múltiples aserciones en una sola prueba con el fin de reportar todas las fallas en conjunto, en lugar de detenerse en la primera falla.
+
+Anotaciones Ciclo de vida:
+Se ejecutan antes/después de todo:
+
+- @BeforeAll
+- @AfterAll
+
+Se ejecutan en la invocación de cada método (Cada ejecución de método va a tener su propio BeforeEach)
+
+- @BeforeEach
+- @AfterEach
+
+@BeforeAll
+    static void beforeAll() {
+
+    } -> Inicializar algún recurso o conexión
+
+
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+
+
+Test Condicionales: Se ejecutan en ciertos escenarios.
+Ej: Correr una prueba unitaria solamente en Sistema Operativo Linux o en Java 8
+
+- @EnablesOnOs
+- @EnabledOnJre
+- @EnabledIfSystemProperty
+
+
+
+
+
+
+
