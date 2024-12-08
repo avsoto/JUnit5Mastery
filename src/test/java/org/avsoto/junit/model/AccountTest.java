@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.*;
 
 //@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class AccountTest {
@@ -243,6 +244,45 @@ class AccountTest {
         Properties properties = System.getProperties();
         properties.forEach((k, v) -> System.out.println(k + ":" + v));
     }
+
+    @Test
+    void testAccountOwnerAssumeTrue() {
+        boolean isDev = "dev".equals(System.getProperty("ENV"));
+        assumeTrue(isDev);
+
+        account = Account.builder()
+                .id(1)
+                .firstName("Ana Victoria")
+                .lastName("Soto Mejia")
+                .balance(new BigDecimal("20000.23456"))
+                .build();
+
+        assertEquals(20000.23456, account.getBalance().doubleValue());
+        assertFalse(account.getBalance().compareTo(BigDecimal.ZERO) < 0);
+        assertTrue(account.getBalance().compareTo(BigDecimal.ZERO) > 0);
+
+    }
+
+    @Test
+    void testAccountOwnerAssumeThat() {
+        account = Account.builder()
+                .id(1)
+                .firstName("Ana Victoria")
+                .lastName("Soto Mejia")
+                .balance(new BigDecimal("20000.23456"))
+                .build();
+
+        boolean isDev = "dev".equals(System.getProperty("ENV"));
+        assumingThat(isDev, () -> {
+            assertEquals(20000.23456, account.getBalance().doubleValue());
+            assertFalse(account.getBalance().compareTo(BigDecimal.ZERO) < 0);
+        });
+
+        assertTrue(account.getBalance().compareTo(BigDecimal.ZERO) > 0);
+
+    }
+
+
 
 
 

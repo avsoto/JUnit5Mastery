@@ -30,6 +30,19 @@ Ej: Correr una prueba unitaria solamente en Sistema Operativo Linux o en Java 8
 - @EnabledOnJre
 - @EnabledIfSystemProperty
 
+Mockito
+- Framework
+- Nos permite crear objetos simulados en un entorno controlado y determinado.
+- Se asigna un comportamiento deseado en un entorno específico.
+
+Dado que (preparamos nuestro contexto, dependencias, datos de entrada, etc)
+Cuando (Invocamos este método que queremos probar con estos datos de comportamiento simulado)
+Entonces (validamos, con los asserts, throws y verify)
+
+Spy = un híbrido entre el objeto real y un mock
+
+
+
 
 
 
