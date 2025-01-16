@@ -41,6 +41,8 @@ Entonces (validamos, con los asserts, throws y verify)
 
 Spy = un híbrido entre el objeto real y un mock
 
+Verify = Nos permite verificar si realmente se invocó un método de nuestro mock
+
 
 
 
